@@ -3,6 +3,7 @@ package com.cleancode.knuth;
 public class NumberPrinter {
 
     private final int linesPerPage;
+
     private final int columns;
 
 

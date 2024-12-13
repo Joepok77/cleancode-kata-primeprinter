@@ -35,6 +35,7 @@ public class PrimePrinterHelper {
                 }
             } while (!possiblyPrime);
 
+
             numberOfPrimes++;
             numbers[numberOfPrimes] = candidate;
         }

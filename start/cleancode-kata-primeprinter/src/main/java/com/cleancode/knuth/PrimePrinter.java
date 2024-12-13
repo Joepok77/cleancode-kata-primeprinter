@@ -4,6 +4,7 @@ public class PrimePrinter {
 
     private static final int numberOfNumbers = 1000;
 
+
     public static void main(String[] args) {
 
         PrimePrinterHelper primePrinterHelper = new PrimePrinterHelper();
