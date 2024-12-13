@@ -38,6 +38,7 @@ public class PrimePrinterTest {
             assertEquals(null, lead.readLine());
         } finally {
             lead.close();
+
             gold.close();
         }
     }

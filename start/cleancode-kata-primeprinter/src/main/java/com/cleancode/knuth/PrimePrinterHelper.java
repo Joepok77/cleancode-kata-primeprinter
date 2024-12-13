@@ -7,6 +7,8 @@ public class PrimePrinterHelper {
     private final int linesPerPage = 50;
     private final int columns = 4;
     private final int ordmax = 30;
+
+
     private final int[] multiples = new int[ordmax + 1];
     private int pagenumber = 1;
     private int pageoffset = 1;
