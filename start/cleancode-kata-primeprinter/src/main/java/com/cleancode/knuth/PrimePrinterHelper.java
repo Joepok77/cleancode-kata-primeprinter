@@ -1,5 +1,8 @@
 package com.cleancode.knuth;
 
+import java.io.PrintStream;
+import java.util.ArrayList;
+
 public class PrimePrinterHelper {
 
     private final int numberOfPrimes = 1000;
@@ -7,7 +10,6 @@ public class PrimePrinterHelper {
     private final int linesPerPage = 50;
     private final int columns = 4;
     private final int ordmax = 30;
-
 
     private final int[] multiples = new int[ordmax + 1];
     private int pagenumber = 1;
@@ -21,7 +23,8 @@ public class PrimePrinterHelper {
     private int square = 9;
     private int n = 0;
 
-    public void print() {
+    // Méthode pour générer les nombres premiers
+    public void generatePrimes() {
         primes[1] = 2;
 
         while (primeIndex < numberOfPrimes) {
@@ -45,6 +48,12 @@ public class PrimePrinterHelper {
             primeIndex++;
             primes[primeIndex] = candidate;
         }
+    }
+
+    // Nouvelle méthode pour imprimer les nombres premiers
+    public void printPrimes(int[] primes, int numberOfPrimes) {
+        int pageoffset = 1;  // Redéfinir pour être utilisée spécifiquement dans printPrimes
+        int pagenumber = 1;
 
         while (pageoffset <= numberOfPrimes) {
             System.out.print("The First ");
@@ -52,6 +61,7 @@ public class PrimePrinterHelper {
             System.out.print(" Prime Numbers === Page ");
             System.out.print(Integer.toString(pagenumber));
             System.out.println("\n");
+
             for (rowoffset = pageoffset; rowoffset <= pageoffset + linesPerPage - 1; rowoffset++) {
                 for (column = 0; column <= columns - 1; column++)
                     if (rowoffset + column * linesPerPage <= numberOfPrimes)
@@ -61,7 +71,12 @@ public class PrimePrinterHelper {
             System.out.println("\f");
             pagenumber++;
             pageoffset += linesPerPage * columns;
-
         }
+    }
+
+    // Méthode d'impression qui appelle printPrimes
+    public void print() {
+        generatePrimes();  // Générer les nombres premiers
+        printPrimes(primes, numberOfPrimes);  // Appeler printPrimes avec les bons paramètres
     }
 }
