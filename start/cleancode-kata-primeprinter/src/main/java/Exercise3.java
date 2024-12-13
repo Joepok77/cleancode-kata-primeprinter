@@ -8,7 +8,7 @@ public class Exercise3 {
     public double calculate(double amount, int type, int years) {
         double discount = (years > 5) ? 0.05 : years / 100.0;
         double discountFactor = 1 - discount;
-    // pas de case car chaque case retourne directement le calcul du prix.
+    // pas de break car chaque case retourne directement le calcul du prix.
         switch (type) {
             case 1: return amount;
             case 2: return amount * 0.9 * discountFactor;
